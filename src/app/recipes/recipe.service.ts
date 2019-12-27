@@ -15,12 +15,15 @@ export class RecipeService {
     // tslint:disable-next-line:max-line-length
    new Recipe('A test recipe', 'This is simply a test', 'https://joyfoodsunshine.com/wp-content/uploads/2016/09/easy-pizza-casserole-recipe-5.jpg', [
      new Ingredient('meat', 1),
-     new Ingredient('french fries', 20)
+     new Ingredient('fuck fries', 20)
    ])
   ];
-  constructor(private slService: ShoppingListService){}
+  constructor(private slService: ShoppingListService) {}
   getRecipes() {
     return this.recipes.slice();
+  }
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.slService.addIngredient(ingredients);
